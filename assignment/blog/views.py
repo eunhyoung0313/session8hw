@@ -37,13 +37,25 @@ def detail_defined_in_view(request,primary_key_of_the_post_that_i_clicked):
     
 def movie_defined_in_view(request):
     movie_posts=Post.objects.filter(genre='movie')
-    return render(request,'detail.html',{'movie_posts_i_will_use_in_html':movie_posts})
+    post_list=[]
+    for post in movie_posts:
+      post_list.append(post)
+
+    return render(request,'movie.html',{'post_list':post_list})
 
 def drama_defined_in_view(request):
     drama_posts=Post.objects.filter(genre='drama')
-    return render(request,'detail.html',{'drama_posts_i_will_use_in_html':drama_posts})
+    post_list=[]
+    for post in drama_posts:
+      post_list.append(post)
+
+    return render(request,'drama.html',{'post_list':post_list})
 
 def entertainment_defined_in_view(request):
     entertainment_posts=Post.objects.filter(genre='entertainment')
-    return render(request,'detail.html',{'entertainment_posts_i_will_use_in_html':entertainment_posts})
+    post_list=[]
+    for post in entertainment_posts:
+      post_list.append(post)
+
+    return render(request,'entertain.html',{'post_list':post_list})
 # Create your views here.

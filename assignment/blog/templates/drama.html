@@ -1,3 +1,7 @@
 <body>
-    <p>{{drama_posts_i_will_use_in_html}}</p> 
+    {% for post in post_list %} 
+    <h1>제목 : {{post.title}} </h1>
+    <a href="{%url 'detail_i_will_use_in_html' post.pk %}">글 자세히보기</a>
+    {% endfor %}
+
  </body>
